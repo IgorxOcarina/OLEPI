@@ -1,0 +1,77 @@
+#N canvas 496 13 1768 896 12;
+#X obj 260 56 r fromGUI;
+#X obj 108 19 r fromSystem;
+#X obj 108 43 route list;
+#X obj 108 70 route /tilts;
+#X msg 108 94 list /tilts \$1 \$2;
+#X obj 34 246 s toNetwork;
+#X obj 716 622 s toGUI;
+#X msg 716 143 list /pshift_input_min_set -7 -12 -19 -24 -29 -36;
+#X msg 716 108 list /pshift_input_max_set 7 12 19 24 29 36;
+#X msg 716 258 list /pshift_output_max_set 7 12 19 24 29 36;
+#X msg 716 323 list /X_axis_set mic_gain pshift_input reverb_window_size
+reverb_dry_wet pshift_output_ volume_output;
+#X msg 716 363 list /Y_axis_set mic_gain pshift_input reverb_window_size
+reverb_dry_wet pshift_output_ volume_output;
+#X msg 716 293 list /pshift_output_min_set -7 -12 -19 -24 -29 -36;
+#X obj 716 76 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 716 51 loadbang;
+#X obj 260 80 route list;
+#X obj 255 268 sel 1;
+#X msg 255 292 list /pshift_input_knob 0.5;
+#X obj 260 104 route /pshift_input_reset /pshift_output_reset;
+#X obj 364 195 sel 1;
+#X msg 364 219 list /pshift_output_knob 0.5;
+#X obj 290 237 loadbang;
+#X msg 716 179 list /reverb_max_set 300 400 500 1000 1500 2000 2500
+3000 3500 4000 4500 5000;
+#X msg 716 218 list /reverb_min_set 250 300 400 500 1000;
+#X msg 716 403 list /red_x_axis_set mic_gain pshift_input reverb_window_size
+reverb_dry_wet pshift_output_ volume_output;
+#X msg 714 455 list /red_y_axis_set mic_gain pshift_input reverb_window_size
+reverb_dry_wet pshift_output_ volume_output;
+#X msg 714 509 list /yellow_x_axis_set mic_gain pshift_input reverb_window_size
+reverb_dry_wet pshift_output_ volume_output;
+#X msg 714 549 list /yellow_y_axis_set mic_gain pshift_input reverb_window_size
+reverb_dry_wet pshift_output_ volume_output;
+#X connect 0 0 15 0;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 6 0;
+#X connect 11 0 6 0;
+#X connect 12 0 6 0;
+#X connect 13 0 8 0;
+#X connect 13 0 27 0;
+#X connect 13 0 26 0;
+#X connect 13 0 25 0;
+#X connect 13 0 24 0;
+#X connect 13 0 11 0;
+#X connect 13 0 10 0;
+#X connect 13 0 12 0;
+#X connect 13 0 9 0;
+#X connect 13 0 7 0;
+#X connect 13 0 23 0;
+#X connect 13 0 22 0;
+#X connect 14 0 13 0;
+#X connect 15 0 18 0;
+#X connect 16 0 17 0;
+#X connect 17 0 6 0;
+#X connect 18 0 16 0;
+#X connect 18 1 19 0;
+#X connect 19 0 20 0;
+#X connect 20 0 6 0;
+#X connect 21 0 20 0;
+#X connect 21 0 17 0;
+#X connect 22 0 6 0;
+#X connect 23 0 6 0;
+#X connect 24 0 6 0;
+#X connect 25 0 6 0;
+#X connect 26 0 6 0;
+#X connect 27 0 6 0;
